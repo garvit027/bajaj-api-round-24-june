@@ -39,7 +39,7 @@ public class BfhlApplicationTests {
         BfhlResponse response = bfhlService.processRequest(request);
 
         assertTrue(response.isIsSuccess());
-        assertEquals("garvit_juneja_27062002", response.getUserId());
+        assertEquals("garvit_juneja_27102005", response.getUserId());
         assertEquals("garvit0419.be23@chitkara.edu.in", response.getEmail());
         assertEquals("2310990419", response.getRollNumber());
         assertEquals(Arrays.asList("1"), response.getOddNumbers());
@@ -89,7 +89,7 @@ public class BfhlApplicationTests {
                 .content(jsonPayload))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.is_success").value(true))
-                .andExpect(jsonPath("$.user_id").value("garvit_juneja_27062002"))
+                .andExpect(jsonPath("$.user_id").value("garvit_juneja_27102005"))
                 .andExpect(jsonPath("$.sum").value("339"))
                 .andExpect(jsonPath("$.concat_string").value("Ra"));
     }
@@ -106,7 +106,7 @@ public class BfhlApplicationTests {
         mockMvc.perform(get("/health"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.is_success").value(true))
-                .andExpect(jsonPath("$.user_id").value("garvit_juneja_27062002"))
+                .andExpect(jsonPath("$.user_id").value("garvit_juneja_27102005"))
                 .andExpect(jsonPath("$.email").value("garvit0419.be23@chitkara.edu.in"))
                 .andExpect(jsonPath("$.roll_number").value("2310990419"));
     }
