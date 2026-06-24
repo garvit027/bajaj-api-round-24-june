@@ -100,4 +100,14 @@ public class BfhlApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.operation_code").value(1));
     }
+
+    @Test
+    public void testHealthGet() throws Exception {
+        mockMvc.perform(get("/health"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.is_success").value(true))
+                .andExpect(jsonPath("$.user_id").value("garvit_juneja_27062002"))
+                .andExpect(jsonPath("$.email").value("garvit0419.be23@chitkara.edu.in"))
+                .andExpect(jsonPath("$.roll_number").value("2310990419"));
+    }
 }
